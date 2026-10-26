@@ -1,0 +1,26 @@
+Question Title: Archiving a Release Directory
+Question Link: https://my.newtonschool.co/playground/code/4ks5o139cfoh?lecture_hash=v210chxjexei
+
+Solution:
+mkdir project-files
+cd project-files
+touch report.docx summary.docx draft.docx
+cp report.docx report_backup.docx
+mkdir old
+mv draft.docx old/
+mv summary.docx final_summary.docx
+cp final_summary.docx old/
+rm report_backup.docx
+
+Approach:
+Created the project-files folder using mkdir.
+Entered the folder using cd.
+Created report.docx, summary.docx, and draft.docx using touch.
+Copied report.docx to report_backup.docx using cp.
+Created the old folder using mkdir.
+Moved draft.docx into old/ using mv.
+Renamed summary.docx to final_summary.docx using mv.
+Copied final_summary.docx into old/ using cp.
+Deleted report_backup.docx using rm.
+Verified that
+the final folder structure matched the question.

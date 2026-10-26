@@ -1,0 +1,29 @@
+Question Title: Data Breach Response
+Question Link: https://my.newtonschool.co/playground/code/orlr84xpc3oo?lecture_hash=vifkrugjcwth
+
+Solution:
+# 1. Copy the log file into breach_response
+cp breach_response/evidence/log_dump.txt breach_response/log_dump.txt
+# 2. Temporarily allow writing, move evidence, and restore permissions
+chmod u+w breach_response/evidence
+mv breach_response/evidence breach_response/secure/
+chmod 555 breach_response/secure/evidence
+# 3. Temporarily allow writing, append the first line, and restore permissions
+chmod 644 breach_response/reports/incident_summary.txt
+echo "Breach confirmed" >> breach_response/reports/incident_summary.txt
+chmod 444 breach_response/reports/incident_summary.txt
+# 4. Create the forensics report and set permissions
+echo "Forensics Complete" > breach_response/secure/forensics_report.txt
+chmod 600 breach_response/secure/forensics_report.txt
+# 5. Temporarily allow writing, append the second line, and restore permissions
+chmod 644 breach_response/reports/incident_summary.txt
+echo "Escalated to security team" >> breach_response/reports/incident_summary.txt
+chmod 444 breach_response/reports/incident_summary.txt
+
+Approach:
+Copied log_dump.txt into the main breach_response directory using cp.
+Temporarily added owner write permission to evidence/, moved it into secure/, and restored its permissions to 555.
+Temporarily changed the report's permissions to allow writing, appended Breach confirmed, and restored permissions to 444.
+Created forensics_report.txt with the exact text Forensics Complete and set its permissions to 600.
+Temporarily enabled writing again, appended Escalated to security team, and restored the report permissions to 444.
+Left classified.txt untouched throughout the process.

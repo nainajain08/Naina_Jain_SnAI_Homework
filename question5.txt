@@ -1,0 +1,20 @@
+Question Title: Making a Python Script Executable
+Question Link: https://my.newtonschool.co/playground/code/mepmefz373b4?lecture_hash=t5qc0u6ap8tg
+
+Solution:
+cat > hello.py << 'EOF'
+#!/usr/bin/env python3
+print("Hello from Python")
+EOF
+chmod +x hello.py
+./hello.py
+
+Approach:
+Create a file named hello.py.
+Add #!/usr/bin/env python3 as the first line. This tells the terminal to use Python 3 to run the script.
+Use print("Hello from Python") to display the required message.
+Run chmod +x hello.py to give the file execute permission.
+Run ./hello.py to execute it directly from the terminal.
+
+Expected Output:
+Hello from Python

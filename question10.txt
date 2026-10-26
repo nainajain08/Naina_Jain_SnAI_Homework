@@ -1,0 +1,30 @@
+Question Title: Initializing and Pushing a Client App Repository
+Question Link: https://my.newtonschool.co/playground/code/5i36axzh7cl2?lecture_hash=mi7y4g3am46y
+
+Solution:
+cd client-app
+git init
+echo "<!DOCTYPE html><html><head><title>Client App</title></head><body><h1>Client App</h1></body></html>" > index.html
+echo "console.log('Client app initialized');" > app.js
+git add index.html app.js
+git commit -m "Initial client files"
+git branch -M main
+git remote add origin https://github.com/startup/client-app.git
+git push -u origin main
+git log
+
+Approach:
+Navigate into the client-app folder and initialize Git.
+Replace the placeholder contents of index.html and app.js with starter content before staging them.
+Stage only index.html and app.js. Do not stage or modify temp.js or .DS_Store.
+Commit the staged files with the message Initial client files.
+Rename the current branch to main.
+Register the provided GitHub URL as the remote named origin.
+Push main to origin for the first time using git push -u origin main.
+Run git log to verify the commit history.
+
+Expected Result:
+index.html and app.js are included in the commit.
+temp.js and .DS_Store remain untouched and unstaged.
+The remote is named origin, and the local main branch is pushed to it.
+git log displays the Initial client files commit.

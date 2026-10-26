@@ -1,0 +1,19 @@
+Question Title: Setting Permissions for a Deployment Project
+Question Link: https://my.newtonschool.co/playground/code/3wz3wv7c89fo?lecture_hash=vifkrugjcwth
+
+Solution:
+# Rule 1: Python source files — owner has full access, group and others have no access
+chmod 700 deployment/app/*.py
+# Rule 2: datasets directory and all its files — owner and group have full access, others have no access
+chmod 770 deployment/datasets
+chmod 770 deployment/datasets/*
+# Rule 3: Documentation — owner can read and write; group and others can only read
+chmod 644 deployment/docs/OVERVIEW.md
+# Rule 4: Shell scripts — owner has full access; group and others can read and execute
+chmod 755 deployment/bin/*.sh
+
+Approach:
+Used chmod 700 to give the owner read, write, and execute permissions on all Python files while denying access to the group and others.
+Used chmod 770 on the datasets directory and its files to give the owner and group full permissions and remove all permissions for others.
+Used chmod 644 on OVERVIEW.md to allow the owner to read and write, while the group and others can only read.
+Used chmod 755 on every shell script to give the owner full permissions and allow the group and others to read and execute without writing.

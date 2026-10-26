@@ -1,0 +1,13 @@
+Question 7: The Missing Project Credentials
+Question Link: https://my.newtonschool.co/playground/code/7x83ezx6nimm
+
+Solution:
+grep -Rho --exclude=db_password.txt '^DB_PASSWORD=.*' EventApp | head -n 1 > EventApp/db_password.txt
+
+Approach:
+1. I searched recursively through the EventApp directory to locate the file containing the DB_PASSWORD entry.
+2. I used grep to extract the complete line beginning with DB_PASSWORD=.
+3. I used head to select the first matching line.
+4. I redirected the result into db_password.txt inside the EventApp directory.
+5. I verified that the output file was created and contained data.
+The password was retrieved dynamically from the existing credentials file instead of being hardcoded.

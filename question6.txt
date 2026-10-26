@@ -1,0 +1,22 @@
+Question Title: Creating a Reusable C Build Script
+Question Link: https://my.newtonschool.co/playground/code/9kh4giios2j4?lecture_hash=t5qc0u6ap8tg
+
+Solution:
+cat > build.sh << 'EOF'
+#!/bin/bash
+gcc hello.c -o hello
+EOF
+chmod +x build.sh
+./build.sh
+./hello
+
+Approach:
+Create a shell script named build.sh.
+Add #!/bin/bash to specify the shell interpreter.
+Use gcc hello.c -o hello to compile hello.c and create an executable named hello.
+Run chmod +x build.sh to make the script executable.
+Run ./build.sh to compile the C program.
+Run ./hello to execute the compiled program.
+
+Expected Output:
+Hello from C

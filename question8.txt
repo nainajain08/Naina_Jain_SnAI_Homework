@@ -1,0 +1,26 @@
+Question Title: Committing Selected Files in Git
+Question Link: https://my.newtonschool.co/playground/code/5ypni48t3pzs
+
+Solution:
+cd api-service
+git init
+git add README.md
+git commit -m "Add documentation"
+git add server.js routes.js package.json
+git commit -m "Add server files"
+git status
+git log
+
+Approach:
+Navigate to the api-service directory.
+Initialize a Git repository using git init.
+Stage only README.md and commit it with the message Add documentation.
+Stage server.js, routes.js, and package.json, then commit them with the message Add server files.
+Do not stage draft.md or .env.
+Run git status to check the working tree and git log to view the commit history.
+
+Expected Result:
+Two commits are created with the specified messages.
+README.md is included in the first commit.
+server.js, routes.js, and package.json are included in the second commit.
+draft.md and .env are not staged or committed by these commands.

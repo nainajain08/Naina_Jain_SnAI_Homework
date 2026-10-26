@@ -1,0 +1,35 @@
+Question Title: Setting Up a Build Pipeline Directory Structure
+Question Link: https://my.newtonschool.co/playground/code/r2ui5gw5lhqt?lecture_hash=n9ynhcuvkld8
+
+Solution:
+mkdir -p pipeline/stages/build
+mkdir -p pipeline/stages/test/unit/integration
+mkdir -p pipeline/env/staging
+mkdir -p pipeline/env/prod
+mkdir -p pipeline/artifacts/old
+chmod 750 pipeline/stages
+chmod 770 pipeline/artifacts
+chmod 700 pipeline/env
+touch pipeline/stages/build/app.py
+touch pipeline/stages/build/config.json
+touch pipeline/stages/build/NOTES.md
+echo "Build stage initialized." > pipeline/stages/build/NOTES.md
+touch pipeline/artifacts/old/build.log
+touch pipeline/artifacts/old/test.log
+touch pipeline/artifacts/old/deploy.log
+chmod 640 pipeline/artifacts/old/build.log pipeline/artifacts/old/test.log pipeline/artifacts/old/deploy.log
+
+Approach:
+Use mkdir -p to create the required nested directories.
+Set pipeline/stages to 750 (owner: rwx, group: r-x, others: no access).
+Set pipeline/artifacts to 770 (owner and group: rwx, others: no access).
+Set pipeline/env to 700 (owner: rwx, group and others: no access).
+Create app.py, config.json, and NOTES.md inside pipeline/stages/build/.
+Write Build stage initialized. as the single line in NOTES.md.
+Create the three log files inside pipeline/artifacts/old/.
+Set each log file to 640 (owner: rw-, group: r--, others: no access).
+
+Expected Result:
+The required directory structure and starter files are created.
+NOTES.md contains Build stage initialized.
+The specified directories and log files have the required permissions.
